@@ -1,6 +1,7 @@
 package br.com.absalao.elastic.springboot.service.implementation;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import br.com.absalao.elastic.springboot.document.Product;
@@ -48,8 +49,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Page<Product> findByName(String name) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByName'");
+       return productRepository.findByContainName(name, PageRequest.of(0, 1));
     }
     
 }
