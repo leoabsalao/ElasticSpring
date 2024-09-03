@@ -48,8 +48,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Page<Product> findByName(String name) {
-       return productRepository.findByContainName(name, PageRequest.of(0, 1));
+    public Page<Product> findByContainsName(String name) {
+       return productRepository.findByNameContaining(name, PageRequest.of(0, 10));
     }
     
 }

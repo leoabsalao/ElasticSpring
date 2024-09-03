@@ -6,7 +6,6 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 
 import br.com.absalao.elastic.springboot.document.Product;
 
-
 public interface ProductRepository extends ElasticsearchRepository<Product, String>{    
-    Page<Product> findByContainName(String name, Pageable pageable);
+    Page<Product> findByNameContaining(String name, Pageable pageable);
 }
